@@ -4,7 +4,6 @@ import AliveCharacterIcon from '../icons/AliveCharacterIcon.js'
 import UnknownCharacterIcon from '../icons/UnknownCharacterIcon.js'
 import { statusEnum } from '../types/Enums'
 
-
 type Status = {
     status: statusEnum | string
 }

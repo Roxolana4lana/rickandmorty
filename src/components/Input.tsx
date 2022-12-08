@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
-import SearchIcon from '../icons/SearchIcon.js'
 import Overlay from 'react-bootstrap/Overlay';
 import Tooltip from 'react-bootstrap/Tooltip';
+import SearchIcon from '../icons/SearchIcon.js'
 
 interface IInputProps {
     name: string,

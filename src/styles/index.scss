@@ -54,9 +54,6 @@ h1 {
 
     tr {
         border-bottom: 1px solid $secondary-blue;
-        &:last-child {
-            border-bottom: none;
-        }
     }
 
     td {
