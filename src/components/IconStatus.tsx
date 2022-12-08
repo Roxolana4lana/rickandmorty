@@ -1,21 +1,15 @@
-import React from 'react'
+import React, { memo } from 'react'
 import DeadCharacterIcon from '../icons/DeadCharacterIcon.js'
 import AliveCharacterIcon from '../icons/AliveCharacterIcon.js'
 import UnknownCharacterIcon from '../icons/UnknownCharacterIcon.js'
+import { statusEnum } from '../types/Enums'
 
-const statusEnum = {
-    DEAD: 'Dead',
-    ALIVE: 'Alive',
-    UNKNOWN: 'unknown',
-} as const
-
-type statusEnum = typeof statusEnum[keyof typeof statusEnum]
 
 type Status = {
     status: statusEnum | string
 }
 
-const IconStatus = ({ status }: Status ) => {
+const IconStatus = ({ status }: Status) => {
 
     switch (status) {
         case statusEnum.DEAD:
@@ -46,4 +40,4 @@ const IconStatus = ({ status }: Status ) => {
 }
 
 
-export default React.memo(IconStatus)
+export default memo(IconStatus)

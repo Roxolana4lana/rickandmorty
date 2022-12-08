@@ -3,11 +3,11 @@ import Input from './components/Input'
 import Select from './components/Select'
 import TableComponent from './components/Table'
 import PaginationComponent from './components/Pagination'
-import useCharactersService from './services/useCharactersService'
+import useCharacters from './hooks/useCharacters'
 import './styles/index.scss'
 
 function App() {
-  const { charactersData, setCurrentPage, currentPage, name, setName, error, setSpecies } = useCharactersService();
+  const { charactersData, setCurrentPage, currentPage, name, setName, error, setSpecies } = useCharacters();
   return (
       <div className="wrapper">
           <h1>Charakters</h1>

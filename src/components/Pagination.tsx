@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, Dispatch, memo } from 'react'
 import Pagination from 'react-bootstrap/Pagination';
 import { IResponce } from '../types/Interfaces';
 
 interface IPaginationComponentProps {
     response: IResponce,
     currentPage: number,
-    setCurrentPage: React.Dispatch<React.SetStateAction<number>>
+    setCurrentPage: Dispatch<React.SetStateAction<number>>
 }
 
 const PaginationComponent = ({ response, currentPage, setCurrentPage }: IPaginationComponentProps) => {
@@ -56,5 +56,5 @@ const PaginationComponent = ({ response, currentPage, setCurrentPage }: IPaginat
     );
 }
 
-export default React.memo(PaginationComponent)
+export default memo(PaginationComponent)
 

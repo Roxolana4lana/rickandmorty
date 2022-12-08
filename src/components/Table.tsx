@@ -1,50 +1,39 @@
-import React from 'react'
+import React, { memo } from 'react'
 import Table from 'react-bootstrap/Table';
 import Form from 'react-bootstrap/Form';
-import IconStatus from './IconStatus'
+import TableData from './TableData'
 import { IResponce } from '../types/Interfaces';
-
 
 interface ITableComponentProps {
     response: IResponce,
 }
 
-const TableComponent = ({response}: ITableComponentProps) => {
-    const tableThemes = ['Name', 'Avatar', 'Origin', 'Gender', 'Status',]
+const tableThemes = ['Name', 'Avatar', 'Origin', 'Gender', 'Status']
+
+const TableComponent = ({ response }: ITableComponentProps) => {
     return (
         <>
-            <div className='table-wrapper'>
+            <div className="table-wrapper">
                 <Table responsive hover>
-                    <thead style={{ position: 'sticky', top: 0 }}>
+                    <thead style={{ position: "sticky", top: 0 }}>
                         <tr>
-                            <th className='header'><Form.Check inline name="group1" type='checkbox' /></th>
+                            <th className="header"><Form.Check inline name="group1" type="checkbox" /></th>
                             {
                                 tableThemes.map(item => (
-                                    <th className='header' key={item}>{item}</th>
+                                    <th className="header" key={item}>{item}</th>
                                 ))
                             }
                         </tr>
                     </thead>
                     <tbody>
                         {response?.results && response?.results.map((item) => (
-                            <tr key={item.id} className={`${item.status === "Dead" ? "dead-character" : null}`}>
-                                <td>
-                                    <Form.Check inline name="group1" type="checkbox" />
-                                </td>
-                                <td><>{item.name} <br />{item.species}</></td>
-                                <td><img src={item.image} className="avatar" /></td>
-                                <td>{item.origin.name}</td>
-                                <td>{item.gender}</td>
-                                <td><IconStatus status={item.status} /></td>
-                            </tr>
+                            <TableData character={item} />
                         ))}
                     </tbody>
                 </Table>
-            </div>
-            <div className='pagination'>
             </div>
         </>
     );
 }
 
-export default React.memo(TableComponent)
+export default memo(TableComponent)

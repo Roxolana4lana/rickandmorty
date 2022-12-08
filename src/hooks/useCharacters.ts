@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { IResponce } from '../types/Interfaces';
 
-const useCharactersService = () => {
+const useCharacters = () => {
   const [charactersData, setCharactersData] = useState<IResponce>({ status: 'loading' });
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -18,4 +18,4 @@ const useCharactersService = () => {
   return { charactersData, setCurrentPage, currentPage, name, setName, error, species, setSpecies };
 };
 
-export default useCharactersService;
+export default useCharacters;
