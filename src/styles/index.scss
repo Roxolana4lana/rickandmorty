@@ -1,0 +1,206 @@
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+$primary-blue: #F5F8FD;
+$secondary-blue: #F6F8FA;
+$secondary-blue-pale: #BAC6D8;
+$primary-anthracite: #1A2328;
+$primarY-ant-80: #484F53;
+$secondary-blue-pale-100: #0088DA;
+$secondary-blue-pale-40: #BAC6D8;
+$secondary-blue-pale-10:#EEF1F5;
+$secondary-blue-pale-5:#F6F8FA;
+$primary-white: #FFFFFF;
+$green: #03A99F;
+$red:#FF2626;
+
+body {
+    background-color: $secondary-blue;
+    font-family: 'Oswald', sans-serif;
+}
+
+.wrapper {
+    max-width: 1161px;
+    margin: 0 auto;
+    padding-top:50px;
+}
+
+h1 {
+    font-family: Oswald;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom:25px;
+}
+
+.table-wrapper {
+    max-width: 1161px;
+    height: 457px;
+    background-color: white;
+    filter: drop-shadow(0px 2px 18px #DDE3EC);
+    font-size: 14px;
+    overflow: auto;
+    .table {
+        border-color: transparent;
+    }
+
+    thead {
+    width: 1161px;
+    height: 42px;
+    border-bottom: 2px solid $secondary-blue;
+    }
+
+    tr {
+        border-bottom: 1px solid $secondary-blue;
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    td {
+        height: 83px;
+        vertical-align: middle;
+    }
+
+    .dead-character {
+        background-color: $secondary-blue-pale-5;
+    }
+
+    .avatar {
+        width: 50px;
+        height:50px;
+        filter: drop-shadow(0px 2px 18px #E5EAF0);
+        border-radius:15px;
+    }
+
+    .charakter-status-dead, 
+    .charakter-status-alive,
+    .charakter-status-unknown{
+        height: 58px;
+        line-height: 58px;
+        vertical-align: middle;
+        svg {
+            margin-right: 1rem;
+        }
+    }
+
+    .charakter-status-dead{
+        svg {
+            color: $red;
+        }
+    }
+    .charakter-status-alive{
+        svg {
+            color: $green;
+        }
+    }
+    .charakter-status-unknown {
+        svg {
+            color: $secondary-blue-pale-40;
+        }
+    }
+
+    .form-check-input {
+        height: 18px;
+        width: 18px;
+        border: 1px solid $secondary-blue-pale-40;
+        border-radius: 2px;
+        margin-left:20px;
+    }
+}
+
+.filter-items {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 25px;
+
+    button {
+        background: $primary-white;
+        border: 1px solid $secondary-blue-pale;
+        height: 40px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: $primary-anthracite;
+    }
+    
+    svg {
+        color: $secondary-blue-pale-100;
+    }
+}
+
+input {
+    background: $primary-white;
+    border: 1px solid $secondary-blue-pale;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: $primary-anthracite;
+    border-radius: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.input-group {
+    max-width: 140px;
+}
+
+.form-control {
+    border-right: none;
+}
+
+.input-group-text {
+    background-color: $primary-white;
+    border-left: none;
+    margin-right: 1em;
+}
+
+.header {
+    position: sticky;
+    top:0;
+}
+
+.pagination{
+    float: right;
+    margin-top:40px;
+    .page-link.active, .active > .page-link{
+        background: $secondary-blue-pale-10;
+        border: 1px solid $secondary-blue-pale-40;
+        color:$primarY-ant-80;
+    }
+    li{
+        height: 40px;
+        width: 40px;
+        border-radius: 5px;
+        margin: 3px;
+        font-family: Oswald;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: center;
+        border: $secondary-blue-pale-40;
+        &:last-child{
+            margin-right: 0;
+        }
+        a {
+            color:$primarY-ant-80;
+        }
+    }
+    .page-ellipsis{
+        li {
+            a { 
+                border: none;
+                background: none;
+            }
+        }
+    }
+}
